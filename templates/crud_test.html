@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>CRUD Test</h2>
+
+<form action="crud_test" method="POST">
+  {% csrf_token %}
+  <input type="text"  name="firstname" placeholder="firstName"><br>
+  <input type="text" name="lastname" placeholder="lastname"><br>
+  {% comment %} <input type="email"  name="email" placeholder="Email"><br>
+  <input type="password"  name="password" placeholder="Password"><br> {% endcomment %}
+  <input type="submit" value="Submit">
+</form> 
+
+
+
+</body>
+</html>

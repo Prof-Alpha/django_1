@@ -1,0 +1,11 @@
+<br>
+{% for xx in items %}
+    {% comment %} href="{{xx.id}}" {% endcomment %}
+    {{xx.task}}  <a href="{% url 'personal:details' xx.id %}" target="_blank">Show the id</a> <br>
+{% endfor %}
+<br><br>
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="text" name="taskss" placehodler="Add New Task">
+    <input type="submit" value="Submit">
+</form>

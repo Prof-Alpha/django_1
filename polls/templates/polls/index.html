@@ -1,0 +1,19 @@
+<div style="margin-left:10px">
+    {% for yy in qu %}
+        <div style='border: 2px solid pink; border-radius:6px'>
+            <h2>{{yy.question_text}}</h2>
+            <form action="{% url 'vote' yy.id %}" method='post'>
+                {% csrf_token %}
+                <ul>
+                    {% for xx in yy.choices_set.all %}
+                    <li>
+                        <input type="radio" id="{{xx.id}}" name="votee" value="{{xx.id}}">
+                        <label for="{{xx.id}}">{{xx.choice_text}}</label><br>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <input type="submit" value="Yolla">
+            </form>
+        </div><br>
+    {% endfor %}
+</div>

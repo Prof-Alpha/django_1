@@ -1,0 +1,9 @@
+<h2>{{qu.question_text}}</h2>
+
+<ul>
+    {% for xx in qu.choices_set.all %}
+        <li>
+            {{xx.choice_text}} -- {{xx.vote}} Vote
+        </li>
+    {% endfor%}
+</ul>
